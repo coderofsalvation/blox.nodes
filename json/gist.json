@@ -1,0 +1,75 @@
+{
+  "id": 1,
+  "title": "Github Gist",
+  "type": "widget/Form",
+  "pos": [
+    356,
+    214
+  ],
+  "size": {
+    "0": 140,
+    "1": 20
+  },
+  "flags": {},
+  "inputs": [
+    {
+      "name": "",
+      "type": -1,
+      "link": 0
+    }
+  ],
+  "outputs": [
+    {
+      "name": "",
+      "type": -1,
+      "links": null
+    }
+  ],
+  "mode": 0,
+  "properties": {
+    "data": {
+      "url": "asodfiao",
+      "file": "blox.json",
+      "token": "alksdjflkajsdf",
+      "pretty_json": "yes"
+    },
+    "schema": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "description": "your gist url",
+          "type": "string",
+          "options": {
+            "input_width": "300px"
+          }
+        },
+        "file": {
+          "type": "string",
+          "default": "data.json",
+          "options": {
+            "input_width": "300px"
+          }
+        },
+        "token": {
+          "description": "generate a token here: https://github.com/settings/tokens",
+          "type": "string",
+          "options": {
+            "input_width": "300px"
+          }
+        },
+        "pretty_json": {
+          "description": "pretty print JSON",
+          "type": "string",
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "default": "yes"
+        }
+      }
+    },
+    "$script": "this.onInit = (data,schema) => \n\tnew Promise((resolve,reject) => resolve())\n\nthis.onForm = (data,schema) => \n\tnew Promise((resolve,reject) => resolve({data:data,schema}))\n\nthis.onSave = (data,schema) => \n\tnew Promise((resolve,reject) => resolve({data:data,schema}))\n\nthis.onAction = (action,param) => {\n    this.deploy()\n}\n\nthis.deploy = () => {\n  \tif( !this.properties.data ) return alert(\"Please configure gist first\")\n  \tvar payload = { \"description\":\"Edit gist\",\"files\":{}}\n\tpayload.files[this.properties.data.file] = {\n\t\t\"content\": this.properties.data.pretty_json ? JSON.stringify(data,null,2) : JSON.stringify(data)\n\t}\n\tvar url = 'https://api.github.com/gists/'+ String(this.properties.data.url).split(\"/\")\n\t\t\t\t\t\t\t\t\t\t\t   .pop()\n\t\t\t\t\t\t\t\t\t\t\t   .replace(/[#\\?].*/,'')\n\tfetch( url, {\n\t  headers: {\n\t\t'Accept': 'application/json',\n\t\t'Content-Type': 'application/json',\n\t\t'Authorization':'token '+this.properties.data.token\n\t  },\n\t  method: 'PATCH',                                                              \n\t  body: JSON.stringify(payload)                                        \n\t})\n\t.then( (res) => res.json() )\n\t.then( (res) => this.trigger(null,res) )\n\t.catch( (res) => this.trigger(null,res) )\n}",
+    "fontsize": 12
+  },
+  "bgcolor": "#FFFFFF"
+}
