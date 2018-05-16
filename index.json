@@ -19,7 +19,7 @@
 			"url":"https://rawgit.com/coderofsalvation/1c5f030cd1a616026294a66726a96fc4/raw/6b138a351b6130e451d9d276d98059519a247ea9/gistfile1.txt"
 		},
 		{
-			"type":"bloxnodejson",
+			"type":"bloxnodejson_url",
 			"description":"Github Gist",
 			"name": "Github Gist",
 			"path":"backend/Github Gist",
