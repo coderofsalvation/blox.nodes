@@ -1,33 +1,35 @@
-[
-    {
-        type:"jsonschema_url",
-        description:"basic user schema",
-        name:"User",
-        url:"https://gist.githubusercontent.com/coderofsalvation/c25c1ef84c0076b4fd61840852e06cde/raw/user.json"    
-    },
-    {
-        type:"jsonschema_url",
-        description:"basic REST-endpoint schema",
-        name:"REST endpoint",
-        url:"https://gist.githubusercontent.com/coderofsalvation/cbc15acb70095fc976cf9c9f372b6fdc/raw/endpoint.json"                        
-    },
-    {
-        type:"jsonschema_url",
-        description:"jasonette schema",
-        name:"Jasonette",
-        url:"https://rawgit.com/coderofsalvation/1c5f030cd1a616026294a66726a96fc4/raw/6b138a351b6130e451d9d276d98059519a247ea9/gistfile1.txt"    
-    },
-    {
-        type:"bloxnodejson",
-        description:"Github Gist",
-        name: "Github Gist",
-        path:"backend/Github Gist",
-        url: "https://rawgit.com/coderofsalvation/blox.nodes/master/json/gist.json"
-    },
-    {
-        type:"js",
-        description:"helloworld form",
-        name: "helloworld form",
-        url: "https://rawgit.com/coderofsalvation/blox.nodes/master/js/helloworld.form.js"
-    }
-]
+{
+    "items":[
+		{
+			"type":"jsonschema_url",
+			"description":"basic user schema",
+			"name":"User",
+			"url":"https://gist.githubusercontent.com/coderofsalvation/c25c1ef84c0076b4fd61840852e06cde/raw/user.json"
+		},
+		{
+			"type":"jsonschema_url",
+			"description":"basic REST-endpoint schema",
+			"name":"REST endpoint",
+			"url":"https://gist.githubusercontent.com/coderofsalvation/cbc15acb70095fc976cf9c9f372b6fdc/raw/endpoint.json"
+		},
+		{
+			"type":"jsonschema_url",
+			"description":"jasonette schema",
+			"name":"Jasonette",
+			"url":"https://rawgit.com/coderofsalvation/1c5f030cd1a616026294a66726a96fc4/raw/6b138a351b6130e451d9d276d98059519a247ea9/gistfile1.txt"
+		},
+		{
+			"type":"bloxnodejson",
+			"description":"Github Gist",
+			"name": "Github Gist",
+			"path":"backend/Github Gist",
+			"url": "https://rawgit.com/coderofsalvation/blox.nodes/master/json/gist.json"
+		},
+		{
+			"type":"js",
+			"description":"helloworld form",
+			"name": "helloworld form",
+			"url": "https://rawgit.com/coderofsalvation/blox.nodes/master/js/helloworld.form.js"
+		}
+	]
+}
