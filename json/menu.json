@@ -1,0 +1,75 @@
+{
+  "id": 3,
+  "title": "Menu",
+  "type": "widget/Form",
+  "pos": [
+    260,
+    320
+  ],
+  "size": {
+    "0": 140,
+    "1": 20
+  },
+  "flags": {},
+  "inputs": [
+    {
+      "name": "",
+      "type": -1,
+      "link": null
+    }
+  ],
+  "outputs": [
+    {
+      "name": "",
+      "type": -1,
+      "links": null
+    }
+  ],
+  "mode": 0,
+  "properties": {
+    "data": {
+      "menuitems": [
+        {
+          "name": "my menuitem",
+          "type": "iframe",
+          "value": "http://foo"
+        }
+      ]
+    },
+    "schema": {
+      "type": "object",
+      "properties": {
+        "menuitems": {
+          "type": "array",
+          "format": "table",
+          "options": {
+            "disable_array_reorder": false
+          },
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "default": "my menuitem"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "iframe",
+                  "Endpoint",
+                  "Menu"
+                ]
+              },
+              "value": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "$script": "this.onInit = (data,schema) => \n\tnew Promise((resolve,reject) => resolve())\n\nthis.onForm = (data,schema) => \n\tnew Promise((resolve,reject) => {\n\t    var types = schema.properties.menuitems.items.properties.type\n\t    console.dir(types)\n\t    types.enum = types.enum.slice(0,1)\n\t    types.enum = _.concat( \n\t                    types.enum, \n\t                    this.graph.findNodesByType(\"widget/Form\").map( (p) => p.title ) \n\t                 )\n\t    resolve({data:data,schema})\n\t})\n\nthis.onSave = (data,schema) => \n\tnew Promise((resolve,reject) => resolve({data:data,schema}))\n\nthis.onAction = (action,param) => this.trigger(action,param)",
+    "fontsize": 12
+  },
+  "bgcolor": "#FFFFFF"
+}
