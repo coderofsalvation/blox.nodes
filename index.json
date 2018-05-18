@@ -15,6 +15,13 @@
 		},
 		{
 			"type":"bloxnodejson_url",
+			"description":"Menu",
+			"name": "Menu",
+			"path":"app/menu",
+			"url": "https://rawgit.com/coderofsalvation/blox.nodes/master/json/menu.json"
+		},
+		{
+			"type":"bloxnodejson_url",
 			"description":"Github Gist",
 			"name": "Github Gist",
 			"path":"backend/Github Gist",
