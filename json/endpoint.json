@@ -27,6 +27,17 @@
   ],
   "mode": 0,
   "properties": {
+    "data": {
+      "path": "",
+      "methods": [
+        {
+          "method": "GET"
+        },
+        {
+          "method": "PUT"
+        }
+      ]
+    },
     "schema": {
       "type": "object",
       "properties": {
@@ -41,6 +52,7 @@
             "type": "object",
             "properties": {
               "method": {
+                "title": "method",
                 "type": "string",
                 "enum": [
                   "GET",
@@ -51,12 +63,6 @@
                   "PATCH"
                 ],
                 "default": "GET"
-              },
-              "user_roles": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
               }
             }
           }
