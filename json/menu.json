@@ -30,9 +30,14 @@
     "data": {
       "menuitems": [
         {
+          "name": "settings",
+          "type": "Menu",
+          "value": ""
+        },
+        {
           "name": "my menuitem",
           "type": "iframe",
-          "value": "http://foo"
+          "value": ""
         }
       ]
     },
@@ -40,6 +45,7 @@
       "type": "object",
       "properties": {
         "menuitems": {
+          "description": "<br>for icon-names see <a href='https://material.io/tools/icons'>this list</a>",
           "type": "array",
           "format": "table",
           "options": {
@@ -52,12 +58,16 @@
                 "type": "string",
                 "default": "my menuitem"
               },
+              "icon": {
+                "type": "string",
+                "default": "settings"
+              },
               "type": {
                 "type": "string",
                 "enum": [
                   "iframe",
-                  "Endpoint",
-                  "Menu"
+                  "Menu",
+                  "Settings"
                 ]
               },
               "value": {
