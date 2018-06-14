@@ -1,0 +1,66 @@
+{
+  "id": 4,
+  "title": "Email Gateway",
+  "type": "widget/Form",
+  "pos": [
+    362,
+    293
+  ],
+  "size": {
+    "0": 140,
+    "1": 20
+  },
+  "flags": {},
+  "inputs": [
+    {
+      "name": "",
+      "type": -1,
+      "link": null
+    }
+  ],
+  "outputs": [
+    {
+      "name": "",
+      "type": -1,
+      "links": null
+    }
+  ],
+  "mode": 0,
+  "properties": {
+    "schema": {
+      "type": "object",
+      "properties": {
+        "from_name": {
+          "title": "From name",
+          "type": "string",
+          "default": "My application",
+          "description": "outgoing email",
+          "options": {
+            "input_width": "300px"
+          }
+        },
+        "from_email": {
+          "title": "From email",
+          "type": "string",
+          "default": "no-reply@my.application",
+          "description": "outgoing email",
+          "options": {
+            "input_width": "300px"
+          }
+        },
+        "bcc": {
+          "type": "array",
+          "format": "table",
+          "items": {
+            "type": "string",
+            "title": "Email",
+            "default": "my@email.com"
+          }
+        }
+      }
+    },
+    "$script": "this.onInit = (data,schema) => \n\tnew Promise((resolve,reject) => resolve())\n\nthis.onForm = (data,schema) => \n\tnew Promise((resolve,reject) => resolve({data:data,schema}))\n\nthis.onSave = (data,schema) => \n\tnew Promise((resolve,reject) => resolve({data:data,schema}))\n\nthis.onAction = (action,param) => this.trigger(action,param)",
+    "fontsize": 12
+  },
+  "bgcolor": "#FFFFFF"
+}
