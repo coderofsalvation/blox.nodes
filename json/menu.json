@@ -28,6 +28,8 @@
   "mode": 0,
   "properties": {
     "data": {
+      "title": "My application",
+      "url_logo": "",
       "menuitems": [
         {
           "name": "settings",
@@ -44,6 +46,21 @@
     "schema": {
       "type": "object",
       "properties": {
+        "title": {
+          "type": "string",
+          "default": "My application",
+          "title": "Menu title",
+          "options": {
+            "input_width": "250px"
+          }
+        },
+        "url_logo": {
+          "type": "string",
+          "title": "URL logo",
+          "options": {
+            "input_width": "500px"
+          }
+        },
         "menuitems": {
           "description": "<br>for icon-names see <a href='https://material.io/tools/icons'>this list</a>",
           "type": "array",
@@ -66,8 +83,7 @@
                 "type": "string",
                 "enum": [
                   "iframe",
-                  "Menu",
-                  "Settings"
+                  "Menu"
                 ]
               },
               "value": {
