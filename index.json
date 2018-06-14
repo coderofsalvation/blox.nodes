@@ -22,6 +22,13 @@
 		},
 		{
 			"type":"bloxnodejson_url",
+			"description":"Email gateway",
+			"name": "Email gateway",
+			"path":"app/emailgateway",
+			"url": "https://rawgit.com/coderofsalvation/blox.nodes/master/json/emailgateway.json"
+		},
+		{
+			"type":"bloxnodejson_url",
 			"description":"Github Gist",
 			"name": "Github Gist",
 			"path":"backend/Github Gist",
