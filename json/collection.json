@@ -1,7 +1,7 @@
 {
   "id": 1,
   "title": "Collection",
-  "type": "widget/Form",
+  "type": "app/Collection",
   "pos": [
     426,
     257
