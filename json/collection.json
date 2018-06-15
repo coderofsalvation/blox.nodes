@@ -1,7 +1,7 @@
 {
   "id": 1,
   "title": "Collection",
-  "type": "app/Collection",
+  "type": "app/collection",
   "pos": [
     426,
     257
