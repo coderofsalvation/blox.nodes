@@ -23,7 +23,7 @@
 		{
 			"type":"bloxnodejson_url",
 			"description":"Collection",
-			"name": "Menu",
+			"name": "Collection",
 			"path":"app/collection",
 			"url": "https://rawgit.com/coderofsalvation/blox.nodes/master/json/collection.json"
 		},

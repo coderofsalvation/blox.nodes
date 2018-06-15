@@ -1,7 +1,7 @@
 {
   "id": 1,
   "title": "Github Gist",
-  "type": "widget/Form",
+  "type": "backend/gist",
   "pos": [
     356,
     214

@@ -1,7 +1,7 @@
 {
   "id": 4,
   "title": "Email Gateway",
-  "type": "widget/Form",
+  "type": "app/emailgateway",
   "pos": [
     362,
     293

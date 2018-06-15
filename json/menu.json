@@ -1,7 +1,7 @@
 {
   "id": 3,
   "title": "Menu",
-  "type": "widget/Form",
+  "type": "app/menu",
   "pos": [
     260,
     320

@@ -98,11 +98,7 @@
         },
         "schema": {
           "type": "string",
-          "description": "jsonschema which describes the data",
-          "enum": [
-            "Menu",
-            "Collection"
-          ]
+          "description": "jsonschema which describes the data"
         },
         "projections": {
           "type": "array",
@@ -130,11 +126,11 @@
           "default": [
             {
               "name": "default",
-              "projection": "this"
+              "projection": "return this"
             },
             {
               "name": "anonymous",
-              "projection": "{id:this.id}"
+              "projection": "return {id:this.id}"
             }
           ]
         }
