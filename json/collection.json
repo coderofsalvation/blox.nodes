@@ -1,0 +1,147 @@
+{
+  "id": 1,
+  "title": "Collection",
+  "type": "widget/Form",
+  "pos": [
+    426,
+    257
+  ],
+  "size": {
+    "0": 140,
+    "1": 20
+  },
+  "flags": {},
+  "inputs": [
+    {
+      "name": "",
+      "type": -1,
+      "link": null
+    }
+  ],
+  "outputs": [
+    {
+      "name": "",
+      "type": -1,
+      "links": null
+    }
+  ],
+  "mode": 0,
+  "properties": {
+    "schema": {
+      "type": "object",
+      "properties": {
+        "storage": {
+          "title": "type",
+          "headerTemplate": "{{i}} - {{self.type}}",
+          "options": {
+            "keep_oneof_values": false,
+            "required_by_default": true
+          },
+          "oneOf": [
+            {
+              "title": "None",
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "options": {
+                    "hidden": true
+                  },
+                  "default": "none",
+                  "enum": [
+                    "none"
+                  ]
+                }
+              },
+              "headerTemplate": "{{i}} - {{self.type}}",
+              "options": {
+                "keep_oneof_values": false,
+                "required_by_default": true
+              }
+            },
+            {
+              "title": "Google spreadsheet",
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "options": {
+                    "hidden": true
+                  },
+                  "default": "gsheet",
+                  "enum": [
+                    "gsheet"
+                  ]
+                },
+                "url": {
+                  "options": {
+                    "input_width": "400px"
+                  },
+                  "type": "string",
+                  "default": "https://docs.google.com/spreadsheets/d/18yVldV_BwA0kv_spCvz2Gs_OQpMr3ASLV3YPkGkBhAc/edit"
+                },
+                "sheetname": {
+                  "options": {
+                    "input_width": "200px"
+                  },
+                  "type": "string",
+                  "default": "order"
+                }
+              },
+              "headerTemplate": "{{i}} - {{self.type}}",
+              "options": {
+                "keep_oneof_values": false,
+                "required_by_default": true
+              }
+            }
+          ]
+        },
+        "schema": {
+          "type": "string",
+          "description": "jsonschema which describes the data",
+          "enum": [
+            "Menu",
+            "Collection"
+          ]
+        },
+        "projections": {
+          "type": "array",
+          "format": "table",
+          "description": "transform the output of records to hide sensitive data",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "options": {
+                  "input_width": "200px"
+                },
+                "default": "default"
+              },
+              "projection": {
+                "type": "string",
+                "options": {
+                  "input_width": "400px"
+                },
+                "format": "json"
+              }
+            }
+          },
+          "default": [
+            {
+              "name": "default",
+              "projection": "this"
+            },
+            {
+              "name": "anonymous",
+              "projection": "{id:this.id}"
+            }
+          ]
+        }
+      }
+    },
+    "$script": "this.onInit = (data,schema) => \n\tnew Promise((resolve,reject) => resolve())\n\nthis.onForm = (data,schema) => {\n\tnew Promise((resolve,reject) => {\n\t    // collect schemas\n\t    schema.properties.schema.enum = this.graph.findNodesByType(\"widget/Form\")\n\t                                              .map( (p) => p.title ) \n\t    resolve({data:data,schema})\n\t})\n}\n\nthis.onSave = (data,schema) => \n\tnew Promise((resolve,reject) => resolve({data:data,schema}))\n\nthis.onAction = (action,param) => this.trigger(action,param)",
+    "fontsize": 12
+  },
+  "bgcolor": "#FFFFFF"
+}
