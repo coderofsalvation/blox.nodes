@@ -1,0 +1,61 @@
+{
+  "id": 1,
+  "title": "Vue App",
+  "type": "html/Vue-App",
+  "pos": [
+    272,
+    232
+  ],
+  "size": {
+    "0": 140,
+    "1": 20
+  },
+  "flags": {},
+  "inputs": [
+    {
+      "name": "",
+      "type": -1,
+      "link": null
+    }
+  ],
+  "outputs": [
+    {
+      "name": "",
+      "type": -1,
+      "links": null
+    }
+  ],
+  "mode": 0,
+  "properties": {
+    "data": {
+      "title": "Hello vue!",
+      "html": "<!-- uncomment this if you are not using GFLO \n<script src=\"https://unpkg.com/vue@2.5.13/dist/vue.min.js\"></script>\n<script src=\"http://stylus-lang.com/try/stylus.min.js\"></script>\n-->\n\n<div id=\"app\">\n  <h1>${title}</h1>\n  {{description}}\n  <foo/> <!-- for this add the vue component node (html > vue-component) -->\n</div>\n\n<script>\nvar App = window.App = new Vue({\n  el: '#app',\n  data(){ \n    return {description:\"lorem ipsum}\n  }\n})\n</script>\n\n<style lang=\"stylus\">\n\n#app {\n  h1 {\n    font-size:50px;\n  }\n}\n</style>",
+      "mode": "global"
+    },
+    "schema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "html": {
+          "type": "string",
+          "format": "html",
+          "title": "HTML",
+          "description": "NOTE: feeding {html:'foo'} to this node will overwrite this template"
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "page",
+            "global"
+          ],
+          "description": "for templates, stylesheet or components (vuejs/reactjs e.g.) select 'global' to run html during startup"
+        }
+      }
+    },
+    "$script": "this.onInit = (data,schema) => \n\tnew Promise((resolve,reject) => resolve())\n\nthis.onForm = (data,schema) => \n\tnew Promise((resolve,reject) => resolve({data:data,schema}))\n\nthis.onSave = (data,schema) => \n\tnew Promise((resolve,reject) => resolve({data:data,schema}))\n\nthis.onAction = (action,param) => this.trigger(action,param)",
+    "fontsize": 12
+  },
+  "bgcolor": "#FFFFFF"
+}

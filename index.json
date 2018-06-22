@@ -29,6 +29,20 @@
 		},
 		{
 			"type":"bloxnodejson_url",
+			"description":"Vue App",
+			"name": "Vue App",
+			"path":"html/Vue-App",
+			"url": "https://rawgit.com/coderofsalvation/blox.nodes/master/json/vue-app.json"
+		},
+		{
+			"type":"bloxnodejson_url",
+			"description":"Vue Component",
+			"name": "Vue Component",
+			"path":"html/Vue-Component",
+			"url": "https://rawgit.com/coderofsalvation/blox.nodes/master/json/vue-component.json"
+		},
+		{
+			"type":"bloxnodejson_url",
 			"description":"Email gateway",
 			"name": "Email gateway",
 			"path":"app/emailgateway",

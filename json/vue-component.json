@@ -1,0 +1,61 @@
+{
+  "id": 1,
+  "title": "VUE Component",
+  "type": "html/Vue-Component",
+  "pos": [
+    272,
+    232
+  ],
+  "size": {
+    "0": 140,
+    "1": 20
+  },
+  "flags": {},
+  "inputs": [
+    {
+      "name": "",
+      "type": -1,
+      "link": null
+    }
+  ],
+  "outputs": [
+    {
+      "name": "",
+      "type": -1,
+      "links": null
+    }
+  ],
+  "mode": 0,
+  "properties": {
+    "data": {
+      "title": "Hi!",
+      "html": "<template id=\"foo\">\n  <div>\n    <h1>${title}</h1>\n    {{description}}\n  </div>\n</template>\n\n<script>\nVue.component('json-form',{\n  template: document.querySelector('#foo').innerHTML, \n  props: [],\n  data(){\n    return {description:\"hellooooo\"}\n  },\n  mounted(){\n    console.log(\"mounted!\n  }\n})\n</script>\n\n<style lang=\"stylus\">\n  div {\n    h1 {\n      font-size: 30px;\n    }\n  }\n</style>",
+      "mode": "global"
+    },
+    "schema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "html": {
+          "type": "string",
+          "format": "html",
+          "title": "HTML",
+          "description": "NOTE: feeding {html:'foo'} to this node will overwrite this template"
+        },
+        "mode": {
+          "type": "string",
+          "enum": [
+            "page",
+            "global"
+          ],
+          "description": "for templates, stylesheet or components (vuejs/reactjs e.g.) select 'global' to run html during startup"
+        }
+      }
+    },
+    "$script": "this.onInit = (data,schema) => \n\tnew Promise((resolve,reject) => resolve())\n\nthis.onForm = (data,schema) => \n\tnew Promise((resolve,reject) => resolve({data:data,schema}))\n\nthis.onSave = (data,schema) => \n\tnew Promise((resolve,reject) => resolve({data:data,schema}))\n\nthis.onAction = (action,param) => this.trigger(action,param)",
+    "fontsize": 12
+  },
+  "bgcolor": "#FFFFFF"
+}
