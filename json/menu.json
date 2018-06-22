@@ -94,7 +94,7 @@
         }
       }
     },
-    "$script": "this.onInit = (data,schema) => \n\tnew Promise((resolve,reject) => resolve())\n\nthis.onForm = (data,schema) => \n\tnew Promise((resolve,reject) => {\n\t    var types = schema.properties.menuitems.items.properties.type\n\t    console.dir(types)\n\t    types.enum = types.enum.slice(0,1)\n\t    types.enum = _.concat( \n\t                    types.enum, \n\t                    this.graph.findNodesByType(\"widget/Form\").map( (p) => p.title ) \n\t                 )\n\t    resolve({data:data,schema})\n\t})\n\nthis.onSave = (data,schema) => \n\tnew Promise((resolve,reject) => resolve({data:data,schema}))\n\nthis.onAction = (action,param) => this.trigger(action,param)",
+    "$script": "this.onInit = (data,schema) => \n\tnew Promise((resolve,reject) => resolve())\n\nthis.onForm = (data,schema) => \n\tnew Promise((resolve,reject) => {\n\t    var types = schema.properties.menuitems.items.properties.type\n\t    console.dir(types)\n\t    types.enum = types.enum.slice(0,1)\n\t    types.enum = _.concat( \n\t                    types.enum, \n\t                    this.graph.nodes.map( (p) => p.title ) \n\t                 )\n\t    resolve({data:data,schema})\n\t})\n\nthis.onSave = (data,schema) => \n\tnew Promise((resolve,reject) => resolve({data:data,schema}))\n\nthis.onAction = (action,param) => this.trigger(action,param)",
     "fontsize": 12
   },
   "bgcolor": "#FFFFFF"
