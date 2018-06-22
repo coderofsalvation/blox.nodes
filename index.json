@@ -29,6 +29,13 @@
 		},
 		{
 			"type":"bloxnodejson_url",
+			"description":"HTML template",
+			"name": "HTML template",
+			"path":"html/template",
+			"url": "https://rawgit.com/coderofsalvation/blox.nodes/master/json/html.json"
+		},
+		{
+			"type":"bloxnodejson_url",
 			"description":"Vue App",
 			"name": "Vue App",
 			"path":"html/Vue-App",
