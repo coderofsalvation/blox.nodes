@@ -30,7 +30,7 @@
     "data": {
       "html": "<h1>${title}</h1>\n\n<p>Hello world</p>\n",
       "title": "Hi!",
-      "mode": "template"
+      "mode": "page"
     },
     "schema": {
       "type": "object",
@@ -52,6 +52,7 @@
             "global",
             "form"
           ],
+          "default":"page",
           "description": "for templates, stylesheet or components (vuejs/reactjs e.g.) select 'global' to run html during startup"
         }
       }
