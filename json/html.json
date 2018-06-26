@@ -28,7 +28,7 @@
   "mode": 0,
   "properties": {
     "data": {
-      "html": "<h1>${title}</h1>\n\n<p>Hello world</p>\n",
+      "html": "<h1>${title}</h1>\n\n<p>Hello world</p>\n<p>${window.document.location.pathname}</p>\n",
       "title": "Hi!",
       "mode": "page"
     },
