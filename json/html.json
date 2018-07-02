@@ -30,7 +30,8 @@
     "data": {
       "html": "<h1>${title}</h1>\n\n<p>Hello world</p>\n<p>${window.document.location.pathname}</p>\n",
       "title": "Hi!",
-      "mode": "page"
+      "mode": "page",
+	  "view":"tab"
     },
     "schema": {
       "type": "object",
@@ -54,7 +55,12 @@
           ],
           "default":"page",
           "description": "for templates, stylesheet or components (vuejs/reactjs e.g.) select 'global' to run html during startup"
-        }
+        },
+		"view":{
+			"options":{"hidden":true},
+			"type":"string",
+			"enum":["default","tab"]
+		}
       }
     },
     "$script": "this.onInit = (data,schema) => \n\tnew Promise((resolve,reject) => resolve())\n\nthis.onForm = (data,schema) => \n\tnew Promise((resolve,reject) => resolve({data:data,schema}))\n\nthis.onSave = (data,schema) => \n\tnew Promise((resolve,reject) => resolve({data:data,schema}))\n\nthis.onAction = (action,param) => this.trigger(action,param)",
