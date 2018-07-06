@@ -31,7 +31,9 @@
       "html": "<h1>${title}</h1>\n\n<p>Hello world</p>\n<p>${window.document.location.pathname}</p>\n",
       "title": "Hi!",
       "mode": "page",
-	  "view":"tab"
+	  "editor":{
+	  	"view":"tab"
+	  }
     },
     "schema": {
       "type": "object",
@@ -56,10 +58,13 @@
           "default":"page",
           "description": "for templates, stylesheet or components (vuejs/reactjs e.g.) select 'global' to run html during startup"
         },
-		"view":{
+		"editor":{
 			"options":{"hidden":true},
-			"type":"string",
-			"enum":["default","tab"]
+			"type":"object",
+			"properties":{
+				"type":"string",
+				"enum":["default","tab"]
+			}
 		}
       }
     },
